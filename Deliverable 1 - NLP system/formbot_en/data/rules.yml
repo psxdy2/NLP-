@@ -1,0 +1,51 @@
+version: "2.0"
+rules:
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Thank you
+    steps:
+      - intent: thankyou
+      - action: utter_noworries
+
+  - rule: Bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: weather_search
+    steps:
+      - intent: weather_search
+      - action: action_query_weather
+  - rule: ask_again
+    steps:
+      - intent: ask_again
+      - action: action_query_weather
+  - rule: user_introduce
+    steps:
+      - intent: user_introduce
+      - action: action_user_introduce
+  - rule: activate flight form
+    steps:
+      - intent: request_flight
+      - action: flight_form
+      - active_loop: flight_form
+
+  - rule: submit form
+    condition:
+    - active_loop: flight_form
+    steps:
+      - action: flight_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_clear_flight_form_slots
+
+  - rule: search_btc
+    steps:
+      - intent: search_btc
+      - action: action_search_coin_history
+
+

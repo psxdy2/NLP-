@@ -1,0 +1,34 @@
+version: "2.0"
+stories:
+  - story: stop form + continue
+    steps:
+      - intent: request_flight
+      - action: flight_form
+      - active_loop: flight_form
+      - intent: stop
+      - action: utter_ask_continue
+      - intent: affirm
+      - action: flight_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_clear_flight_form_slots
+
+  - story: stop form + stop
+    steps:
+      - intent: request_flight
+      - action: flight_form
+      - active_loop: flight_form
+      - intent: stop
+      - action: utter_ask_continue
+      - intent: deny
+      - action: action_deactivate_loop
+      - active_loop: null
+
+  - story: game_play
+    steps:
+      - intent: game_play
+      - action: utter_start_remark
+      - action: action_ask_riddle
+      - intent: riddle_user_answer
+      - action: action_riddle_result

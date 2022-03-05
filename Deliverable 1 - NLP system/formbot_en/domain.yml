@@ -1,0 +1,134 @@
+version: "2.0"
+intents:
+  - request_flight:
+      use_entities: []
+  - city
+  - time
+  - return
+  - affirm
+  - deny
+  - stop
+  - thankyou
+  - greet
+  - bot_challenge
+  - weather_search
+  - ask_again
+  - user_introduce
+  - search_btc
+  - game_play
+  - riddle_user_answer
+
+entities:
+  - time
+  - return
+  - departure
+  - destination
+  - name
+  - coin_name
+
+slots:
+  time:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+  return:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+  requested_slot:
+    type: text
+    influence_conversation: false
+  departure:
+    type: text
+    influence_conversation: false
+    auto_fill: false  
+  destination:
+    type: text
+    influence_conversation: false
+    auto_fill: false  
+  name:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+  problem:
+    type: text
+    influence_conversation: false
+    auto_fill: false 
+
+responses:
+  utter_greet:
+    - text: "Hello, welcome to psxdy2's robot chat room, how can I help?"
+  utter_noworries:
+    - text: "You are welcome :)"
+  utter_iamabot:
+    - text: "I am a robot from PSXDY2, I am a fun and practical robot！！！"
+  utter_default:
+    - text: "Sorry, I didn't understand you, please try input something else"
+  utter_user_introduce:
+    - text: "Hello, I am a bot, powered by Rasa."  
+  utter_start_remark:
+    - text: "Now I am going to ask you a riddle, try to figure out the answer!"        
+  utter_restart:
+    - text: "restarted"
+###############################################
+  utter_ask_departure:
+    - text: "Can tell me the place of departure?"
+  utter_ask_destination:
+    - text: "Can tell me the place of destination?" 
+  utter_ask_return:
+    - text: "Would that be a one-way trip or a round-trip flight?"
+  utter_ask_time:
+    - text: "When were you thinking of going?"
+  utter_submit:
+  - text: "All done!"
+  utter_slots_values:
+    - text: "I am going to run a flight search using the following parameters:\n
+             - departure: {departure}\n
+             - destination: {destination}\n
+             - one-way/round-trip: {return}\n
+             - time: {time}"
+
+  utter_ask_continue:
+    - text: "Do you want to continue?"
+  utter_wrong_departure:
+    - text: "Departure type is not in the database, please try again~"
+  utter_wrong_destination:
+    - text: "Destination type is not in the database, please try again~"
+  utter_wrong_return:
+    - text: "Please reply me a one-way trip or a round-trip flight, thanks~"
+  utter_wrong_time:
+    - text: "Please refer to the following format for reply, for example: November 2,2021, thanks~"
+
+
+actions:
+- validate_flight_form
+- action_clear_flight_form_slots
+- action_query_weather
+- action_user_introduce
+- action_search_coin_history
+- utter_start_remark
+- action_ask_riddle
+- action_riddle_result
+
+forms:
+  flight_form:
+    departure:
+    - type: from_entity
+      entity: departure
+      intent: [city, request_flight]
+    destination:
+    - type: from_entity
+      entity: destination
+      intent: [city, request_flight]
+    return:
+    - type: from_entity
+      entity: return
+      intent: [return, request_flight]
+    time:
+    - type: from_entity
+      entity: time
+      intent: [time, request_flight]
+
+session_config:
+  session_expiration_time: 60  # value in minutes
+  carry_over_slots_to_new_session: true

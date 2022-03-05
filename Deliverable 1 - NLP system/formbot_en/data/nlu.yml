@@ -1,0 +1,675 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey
+    - Hi bot
+    - Hey bot
+    - Hello
+    - Good morning
+    - hi again
+    - hi folks
+    - hi Mister
+    - hi pal!
+    - hi there
+    - greetings
+    - hello everybody
+    - hello is anybody there
+    - hello robot
+    - hallo
+    - heeey
+    - hi hi
+    - hey
+    - hey hey
+    - hello there
+    - hi
+    - hello
+    - yo
+    - hola
+    - hi?
+    - hey bot!
+    - hello friend
+
+- intent: thankyou
+  examples: |
+    - um thank you good bye
+    - okay cool uh good bye thank you
+    - okay thank you good bye
+    - you rock
+    - thank you and good bye
+    - noise thank you good bye
+    - thank you goodbye noise
+    - okay thank you goodbye
+    - uh thank you good bye
+    - thank you goodbye
+    - breath thank you goodbye
+    - thank you
+    - okay thank you
+    - thanks goodbye
+    - ah thank you goodbye
+    - thank you noise
+    - thank you good bye
+    - thanks
+    - noise thank you goodbye
+    - uh okay thank you good bye
+    - thank you bye
+    - um okay thank you good bye
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: request_flight
+  examples: |
+    - I want to book a flight
+    - book a flight
+    - can i book a flight
+    - can you help me book a flight
+    - I would like to book a flight from [London](departure) to [Paris](destination)
+    - I would like to book a flight from [Paris](departure) to [London](destination)
+    - I want to book a flight
+    - How to book a flight
+    - How to book a flight
+    - Can you book a flight for me
+    - I want to book a flight from [London](departure) to [Paris](destination)
+    - Can you check the flight information for me
+    - Help me book a flight from [London](departure) to [Paris](destination)
+    - Help me book a flight from [London](departure) to [Paris](destination), thank you
+    - I want to book a flight from [Tokyo](departure) to [Paris](destination)
+    - I want to book a flight from [New York](departure) to [Paris](destination)
+    - I want to book a flight from [Los Angeles](departure) to [Paris](destination)
+    - I want to book a flight from [Osaka](departure) to [Paris](destination)
+    - I want to book a flight from [Cambridge](departure) to [Paris](destination)
+    - I want to book a flight from [Berlin](departure) to [Paris](destination)
+    - I want to book a flight from [Seoul](departure) to [Paris](destination)
+    - I want to book a flight from [Sydney](departure) to [Paris](destination)
+    - I want to book a flight from [San Francisco](departure) to [Paris](destination)
+    - I want to book a [single](return) flight from [London](departure) to [Paris](destination)
+    - I want to book a [return](return) flight from [London](departure) to [Paris](destination)
+    - I want to book a [single](return) flight
+    - I want to book a [return](return) flight
+    - I want to book a flight from [Sydney](departure) to [Paris](destination) on [December 11,2021](time).
+    - I want to book a flight from [London](departure) to [Paris](destination) on [January 5](time).
+    - I want to book a flight from [London](departure) to [Paris](destination) on [January 5, 2021](time).
+    - I want to book a [single](return) flight on [January 5, 2021](time)
+    - I want to book a [return](return) flight on [January 5, 2021](time)
+    - Can you book a flight for me on [June 18, 2021](time)
+    - Can you book a flight for me on [June 19](time)
+
+
+- intent: affirm
+  examples: |
+    - yeah a cheap restaurant serving international food
+    - correct
+    - ye
+    - uh yes
+    - let's do it
+    - yeah
+    - uh yes
+    - um yes
+    - yes knocking
+    - that's correct
+    - yes yes
+    - yea
+    - yes
+    - yes and i dont care
+    - right on
+    - i love that
+
+- intent: deny
+  examples: |
+    - no
+    - no new selection
+    - no thanks
+    - no thank you
+    - uh no
+    - breath no
+    - do you have something else
+    - no this does not work for me
+
+- intent: city
+  examples: |
+    - [London](departure)
+    - [Taipei](departure)
+    - [New York](departure)
+    - [Singapore](departure)
+    - [Sydney](departure)
+    - [Beijing](departure)
+    - [Dubai](departure)
+    - [Paris](departure)
+    - [Tokyo](departure)
+    - [Los Angeles](departure)
+    - [Mumbai](departure)
+    - [Toronto](departure)
+    - [Shanghai](departure)
+    - [Amsterdam](departure)
+    - [Milan](departure)
+    - [Frankfurt](departure)
+    - [Mexico City](departure)
+    - [Sao paulo](departure)
+    - [Chicago](departure)
+    - [Kuala Lumpur](departure)
+    - [Madrid](departure)
+    - [Moscow](departure)
+    - [Brussels](departure)
+    - [Warsaw](departure)
+    - [Seoul](departure)
+    - [Johannesburg](departure)
+    - [Zurich](departure)
+    - [Melbourne](departure)
+    - [Istanbul](departure)
+    - [Bangkok](departure)
+    - [Stockholm](departure)
+    - [Vienna](departure)
+    - [Guangzhou](departure)
+    - [Hongkong](departure)
+    - [Buenos Aires](departure)
+    - [San Francisco](departure)
+    - [Montreal](departure)
+    - [Munich](departure)
+    - [Delhi](departure)
+    - [San diego](departure)
+    - [Boston](departure)
+    - [Manila](departure)
+    - [Shenzhen](departure)
+    - [Riyadh](departure)
+    - [Lisbon](departure)
+    - [Bangalore](departure)
+    - [Dallas](departure)
+    - [Bogota](departure)
+    - [Miami](departure)
+    - [Rome](departure)
+    - [hamburger](departure)
+    - [Houston](departure)
+    - [Berlin](departure)
+    - [Chengdu](departure)
+    - [Tel Aviv](departure)
+    - [Barcelona](departure)
+    - [Doha](departure)
+    - [Lima](departure)
+    - [Vancouver](departure)
+    - [Brisbane](departure)
+    - [Chongqing](departure)
+    - [Cairo](departure)
+    - [Auckland](departure)
+    - [Ho Chi Minh City](departure)
+    - [Osaka](departure)
+    - [Cambridge](departure)
+    - [London](destination)
+    - [Taipei](destination)
+    - [New York](destination)
+    - [Singapore](destination)
+    - [Sydney](destination)
+    - [Beijing](destination)
+    - [Dubai](destination)
+    - [Paris](destination)
+    - [Tokyo](destination)
+    - [Los Angeles](destination)
+    - [Mumbai](destination)
+    - [Toronto](destination)
+    - [Shanghai](destination)
+    - [Amsterdam](destination)
+    - [Milan](destination)
+    - [Frankfurt](destination)
+    - [Mexico City](destination)
+    - [Sao paulo](destination)
+    - [Chicago](destination)
+    - [Kuala Lumpur](destination)
+    - [Madrid](destination)
+    - [Moscow](destination)
+    - [Brussels](destination)
+    - [Warsaw](destination)
+    - [Seoul](destination)
+    - [Johannesburg](destination)
+    - [Zurich](destination)
+    - [Melbourne](destination)
+    - [Istanbul](destination)
+    - [Bangkok](destination)
+    - [Stockholm](destination)
+    - [Vienna](destination)
+    - [Guangzhou](destination)
+    - [Hongkong](destination)
+    - [Buenos Aires](destination)
+    - [San Francisco](destination)
+    - [Montreal](destination)
+    - [Munich](destination)
+    - [Delhi](destination)
+    - [San diego](destination)
+    - [Boston](destination)
+    - [Manila](destination)
+    - [Shenzhen](destination)
+    - [Riyadh](destination)
+    - [Lisbon](destination)
+    - [Bangalore](destination)
+    - [Dallas](destination)
+    - [Bogota](destination)
+    - [Miami](destination)
+    - [Rome](destination)
+    - [hamburger](destination)
+    - [Houston](destination)
+    - [Berlin](destination)
+    - [Chengdu](destination)
+    - [Tel Aviv](destination)
+    - [Barcelona](destination)
+    - [Doha](destination)
+    - [Lima](destination)
+    - [Vancouver](destination)
+    - [Brisbane](destination)
+    - [Chongqing](destination)
+    - [Cairo](destination)
+    - [Auckland](destination)
+    - [Ho Chi Minh City](destination)
+    - [Osaka](destination)
+    - [Cambridge](destination)
+
+- intent: time
+  examples: |
+    - [December 11,2021](time)
+    - [January 5, 2021](time)
+    - [January 5, 2021](time)
+    - [January 5, 2021](time)
+    - [June 18, 2021](time)
+    - [June 19](time)
+    - [September 11,2021](time)
+    - [September 18, 2021](time)
+    - [January 5, 2021](time)
+    - [September 21, 2021](time)
+    - [June 18, 2021](time)
+    - [August 19](time)
+    - [December 11,2021](time)
+    - [January 5, 2021](time)
+    - [January 5, 2021](time)
+    - [January 19, 2021](time)
+    - [June 18, 2021](time)
+    - [August 19](time) 
+       
+- regex: time
+  examples: |
+    - (January|February|March|April|May|June|July|August|September|October|November|December)( \d{1,2})(,( )?[0-9]{4})?
+
+- intent: return
+  examples: |
+    - a [one-way](return) trip
+    - a [round-trip](return) flight
+    - [one-way](return)
+    - [round-trip](return)
+    - a [one-way](return) trip
+    - a [round-trip](return) flight
+    - [one-way](return)
+    - [round-trip](return)
+    - a [one-way](return) trip
+    - a [round-trip](return) flight
+    - [one-way](return)
+    - [round-trip](return)
+    - [multi-city](return)
+    - a [single](return) trip
+    - [single](return)
+
+- intent: stop
+  examples: |
+    - ok then you cant help me
+    - that was shit, you're not helping
+    - you can't help me
+    - you can't help me with what i need
+    - i guess you can't help me then
+    - ok i guess you can't help me
+    - that's not what i want
+    - ok, but that doesnt help me
+    - this is leading to nothing
+    - this conversation is not really helpful
+    - you cannot help me with what I want
+    - I think you cant help me
+    - hm i don't think you can do what i want
+    - stop
+    - stop go back
+    - do you get anything?
+    - and you call yourself bot company? pff
+    - and that's it?
+    - nothing else?
+
+- intent: weather_search
+  examples: |
+    - How is the weather in [London](departure)?
+    - What's the weather like in [London](departure)?
+    - Help me check the weather in [London](departure).
+    - Check the weather in [London](departure).
+    - Is [London](departure) cold today?
+    - Is [London](departure) hot today?
+    - Is it raining today in [London](departure)?
+
+- intent: ask_again
+  examples: |
+    - [London](departure) What about?
+    - What about [London](departure)?
+    - How about [London](departure)?
+    - [London](departure) How about it?
+    - [London](departure) How about it?
+
+- intent: user_introduce
+  examples: |
+    - My name is [Aaron](name).
+    - My name is [Abel](name).
+    - My name is [Abelard](name).
+    - My name is [Abraham](name).
+    - My name is [Adam](name).
+    - My name is [Adrian](name).
+    - My name is [Alva](name).
+    - My name is [Alex](name).
+    - My name is [Alexander](name).
+    - My name is [Alexander](name).
+    - My name is [Alan](name).
+    - My name is [Eilian](name).
+    - My name is [Allan](name).
+    - My name is [Ailin](name).
+    - My name is [Albert](name).
+    - My name is [Alfred](name).
+    - My name is [Andrew](name).
+    - My name is [Andy](name).
+    - My name is [Andrew](name).
+    - My name is [Angus](name).
+    - My name is [Anthony](name).
+    - My name is [Arthur](name).
+    - My name is [Austin](name).
+    - My name is [Ben](name).
+    - My name is [Ben](name).
+    - My name is [Benson](name).
+    - My name is [Bill](name).
+    - My name is [Bob](name).
+    - My name is [Brandon](name).
+    - My name is [Brant](name).
+    - My name is [Brent](name).
+    - My name is [Brian](name).
+    - My name is [Bruce](name).
+    - My name is [Carl](name).
+    - My name is [Cary](name).
+    - My name is [Caspar](name).
+    - My name is [Charles](name).
+    - My name is [Cheney](name).
+    - My name is [Chris](name).
+    - My name is [Christian](name).
+    - My name is [Christopher](name).
+    - My name is [Christian](name).
+    - My name is [Christopher](name).
+    - My name is [Colin](name).
+    - My name is [Cosmo](name).
+    - My name is [Daniel](name).
+    - My name is [Dennis](name).
+    - My name is [Derek](name).
+    - My name is [Donald](name).
+    - My name is [Douglas](name).
+    - My name is [David](name).
+    - My name is [Denny](name).
+    - My name is [Edgar](name).
+    - My name is [Edward](name).
+    - My name is [Edwin](name).
+    - My name is [Elliott](name).
+    - My name is [Elvis](name).
+    - My name is [Eric](name).
+    - My name is [Frederick](name).
+    - My name is [Evan](name).
+    - My name is [Francis](name).
+    - My name is [Frank](name).
+    - My name is [Francis](name).
+    - My name is [Franklin](name).
+    - My name is [Franklin](name).
+    - My name is [Fred](name).
+    - My name is [Gabriel](name).
+    - My name is [Gaby](name).
+    - My name is [Gabriel](name).
+    - My name is [Garfield](name).
+    - My name is [Gary](name).
+    - My name is [Gavin](name).
+    - My name is [George](name).
+    - My name is [Gino](name).
+    - My name is [Glen](name).
+    - My name is [Glendon](name).
+    - My name is [Harrison](name).
+    - My name is [Hugo](name).
+    - My name is [Hunk](name).
+    - My name is [Howard](name).
+    - My name is [Henry](name).
+    - My name is [Ignativs](name).
+    - My name is [Ignace](name).
+    - My name is [Ignatz](name).
+    - My name is [Ivan](name).
+    - My name is [Isaac](name).
+    - My name is [Jack](name).
+    - My name is [Jackson](name).
+    - My name is [Jacob](name).
+    - My name is [James](name).
+    - [Jacob](name).
+    - [Jason](name).
+    - [Jeffery](name).
+    - [Jerome](name).
+    - [Jerry](name).
+    - [Gerald](name).
+    - [Jeremiah](name).
+    - [Jerome](name).
+    - [Jesse](name).
+    - [Jim](name).
+    - [James](name).
+    - [Jimmy](name).
+    - [James](name).
+    - [Joe](name).
+    - [Joseph](name).
+    - [John](name).
+    - [Johnny](name).
+    - [Joseph](name).
+    - [Joshua](name).
+    - [Justin](name).
+    - [Keith](name).
+    - [Ken](name).
+    - [Ken](name).
+    - [Kenneth](name).
+    - [Kenny](name).
+    - [Kenneth](name).
+    - [Kevin](name).
+    - [Lance](name).
+    - [Larry](name).
+    - [Lawrence](name).
+    - [Laurent](name).
+    - [Lawrence](name).
+    - [Leander](name).
+    - [Lee](name).
+    - [Leo](name).
+    - [Leander](name).
+    - [Leonard](name).
+    - [Leopold](name).
+    - [Leonard](name).
+    - [Leopold](name).
+    - [Loren](name).
+    - [Lauren](name).
+    - [Lori](name).
+    - [Lorry](name).
+    - [Lorin](name).
+    - [Luke](name).
+    - [Marcus](name).
+    - [Marcy](name).
+    - [Mark](name).
+    - [Marks](name).
+    - [Mars](name).
+    - [Martin](name).
+    - [Matthew](name).
+    - [Michael](name).
+    - [Mike](name).
+    - [Neil](name).
+    - [Nicholas](name).
+    - [Oliver](name).
+    - [Oscar](name).
+    - [Paul](name).
+    - [Patrick](name).
+    - [Peter](name).
+    - [Philip](name).
+    - [Phoebe](name).
+    - [Quentin](name).
+    - [Randall](name).
+    - [Randal](name).
+    - [Randolph](name).
+    - [Randy](name).
+    - [Randall](name).
+    - [Randolph](name).
+    - [Reed](name).
+    - [Rex](name).
+    - [Richard](name).
+    - [Richie](name).
+    - [Rick](name).
+    - [Ricky](name).
+    - [Ritchie](name).
+    - [Robert](name).
+    - [Robin](name).
+    - [Robert](name).
+    - [Robinson](name).
+    - [Robinson](name).
+    - [Rock](name).
+    - [Roger](name).
+    - [Roy](name).
+    - [Ryan](name).
+    - [Sam](name).
+    - [Samson](name).
+    - [Samuel](name).
+    - [Sammy](name).
+    - [Samson](name).
+    - [Samuel](name).
+    - [Samuel](name).
+    - [Scott](name).
+    - [Sean](name).
+    - [John](name).
+    - [Shawn](name).
+    - [Sean](name).
+    - [Sidney](name).
+    - [Simon](name).
+    - [Solomon](name).
+    - [Spark](name).
+    - [Spencer](name).
+    - [Spike](name).
+    - [Stanley](name).
+    - [Steven](name).
+    - [Stephen](name).
+    - [Stuart](name).
+    - [Terence](name).
+    - [Terry](name).
+    - [Terence](name).
+    - [Timothy](name).
+    - [Tommy](name).
+    - [Thomas](name).
+    - [Tom](name).
+    - [Thomas](name).
+    - [Thomas](name).
+    - [Tony](name).
+    - [Anthony](name).
+    - [Tyler](name).
+    - [Van](name).
+    - [Vern](name).
+    - [Vernon](name).
+    - [Vernon](name).
+    - [Vincent](name).
+    - [Warren](name).
+    - [Wesley](name).
+    - [William](name).
+
+- regex: name
+  examples: |
+    - [A-Za-z]{1,15}
+
+
+- intent: search_btc
+  examples: |
+    - [BTC](coin_name) price
+    - [BTC](coin_name) trend
+    - [BTC](coin_name) time-sharing chart
+    - Check the price of [BTC](coin_name)
+    - Check the [BTC](coin_name) trend
+    - Help me look at the [BTC](coin_name) trend
+
+- synonym: BTC
+  examples: |
+    - Bitcoin
+    - btc
+
+- intent: game_play
+  examples: |
+    - game playing
+    - Play a game
+    - play games
+    - Guessing
+    - Riddles
+    - I want to play a game
+    - Can you play a game
+    - Let's play games together
+    - Let's guess the riddle together
+    - Intellectual games playing
+    - Play a Intellectual games
+    - play Intellectual gamess
+    - Guessing
+    - Riddles
+    - I want to play a Intellectual games
+    - Can you play a Intellectual games
+    - Let's play Intellectual gamess together
+    - Let's guess the riddle together
+
+- intent: riddle_user_answer
+  examples: |
+    - bedroom
+    - washingroom
+    - dinning-room
+    - bedroom
+    - classroom
+    - mum
+    - Father
+    - dad
+    - Mother
+    - Grandmother
+    - Grandfather
+    - grandfather
+    - grandmother
+    - Boy friend
+    - girlfriend
+    - spouse
+    - bedroom
+    - washingroom
+    - dinning-room
+    - bedroom
+    - classroom
+    - mum
+    - Father
+    - dad
+    - Mother
+    - Grandmother
+    - Grandfather
+    - grandfather
+    - grandmother
+    - Boy friend
+    - girlfriend
+    - spouse
+    - wife
+    - love
+    - jeans
+    - mouth
+    - march
+    - blue jeans
+    - father
+    - mickey mouse
+    - mickey
+    - right
+    - wrong
+    - right
+    - right
+    - right
+    - wife
+    - love
+    - jeans
+    - mouth
+    - march
+    - blue jeans
+    - father 
+    - mickey mouse
+    - mickey
+    - right
+    - wrong
+    - right
+    - right
+    - right

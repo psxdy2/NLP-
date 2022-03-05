@@ -1,0 +1,4 @@
+https://www.cnblogs.com/HansBug/p/8901865.html
+
+
+Ubuntu16 nodejs+npm+vue environment configuration
